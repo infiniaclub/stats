@@ -16,3 +16,15 @@ prob_B_given_A <- sum(df$freq[df$Cloudy=="Yes" & df$Rain == "Yes"])
 prob_B_given_A
 conditional_probability(prob_A,prob_B_given_A)
 
+## Bayes Theorem
+bayesTheorem <- function(pA, pB, pBA) {
+  pAB <- pA * pBA / pB
+  return(pAB)
+}
+
+#define probabilities
+pRain <- 0.2
+pCloudy <- 0.4
+pCloudyRain <- .85
+#use function to calculate conditional probability
+bayesTheorem(pRain, pCloudy, pCloudyRain)
